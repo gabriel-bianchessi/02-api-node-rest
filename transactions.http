@@ -3,7 +3,19 @@
 @transactionsRoute = {{baseUrl}}/transactions
 
 ###
-@name = create
+# @name getAll
+GET {{transactionsRoute}} HTTP/1.1
+
+### 
+# @name getOne
+GET {{transactionsRoute}}/{{getAll.response.body.transactions[0].id}} HTTP/1.1
+
+### 
+# @name summary
+GET {{transactionsRoute}}/summary HTTP/1.1
+
+###
+# @name create
 POST {{transactionsRoute}} HTTP/1.1
 Content-Type: application/json
 
